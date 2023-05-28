@@ -92,6 +92,10 @@ body {
 }
 
 @media screen and (max-width: 1100px) {
+  .pc_nav {
+    display: none;
+  }
+
   .pc_nav ul li {
     font-size: 1.6vw;
   }
@@ -404,9 +408,12 @@ footer {
 }
 
 @media screen and (max-width: 767px) {
-  .pc_only,
-  .pc_nav {
+  .pc_only {
     display: none;
+  }
+
+  .header_logo {
+    width: 48vw;
   }
 
   .wrap,
@@ -425,7 +432,9 @@ footer {
   }
 
   .lead_english,
-  .menu_text {
+  .menu_text,
+  .event_date,
+  .event_text {
     font-size: 4.5vw;
   }
 
@@ -434,7 +443,7 @@ footer {
   }
 
   .lead_main {
-    font-size: 9.3vw;
+    font-size: 9.1vw;
     padding-top: 25px;
   }
 
@@ -462,6 +471,27 @@ footer {
 
   .about_box {
     padding: 0 7%;
+    box-sizing: border-box;
+  }
+
+  .about h2 {
+    width: 42vw;
+  }
+
+  .menu h2 {
+    width: 23vw;
+  }
+
+  .gallery h2 {
+    width: 37vw;
+  }
+
+  .event h2 {
+    width: 26vw;
+  }
+
+  .access h2 {
+    width: 33vw;
   }
 
   .about h2,
@@ -518,11 +548,6 @@ footer {
     margin: 15px;
   }
 
-  .event_date,
-  .event_text {
-    font-size: 16px;
-  }
-
   .event_text {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -530,8 +555,13 @@ footer {
     padding: 0;
   }
 
-  .event_item {
-    padding-bottom: 20px;
+  .event_date,
+  .event_text {
+    display: block;
+  }
+
+  .event_item + .event_item {
+    padding-top: 20px;
   }
 
   .access {
