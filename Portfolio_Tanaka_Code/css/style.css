@@ -1,0 +1,401 @@
+@charset "utf-8";
+
+/* cssリセット */
+
+/*利用するタグによってこちらの内容は増やす*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dt,
+dd,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  color: #4c5b7f;
+  font-family: "fot-tsukuardgothic-std", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-feature-settings: "palt";
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+  border: none;
+}
+
+body {
+  background-color: #ececec;
+}
+
+/* スクロール */
+
+.scrolldown {
+  position: absolute;
+  font-size: 0.7rem;
+  color: #f7f7f7;
+  left: 50%;
+  top: 50px;
+}
+
+.scrolldown span {
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  color: #eee;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+.scrolldown::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 30px;
+  background: #eee;
+  animation: pathmove 1.4s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  30% {
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 0;
+  }
+}
+
+/* ヘッダー */
+
+.header_wrap {
+  position: absolute;
+  display: flex;
+  top: 0;
+  justify-content: flex-end;
+  padding-top: 40px;
+  width: 100%;
+}
+
+.pc_nav ul {
+  display: flex;
+  padding-right: 10%;
+}
+
+.pc_nav ul li {
+  width: 105px;
+  margin-left: 55px;
+  color: #e3f1fc;
+  font-weight: 300;
+  font-size: 17px;
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  text-align: center;
+  list-style: none;
+}
+
+.sp_nav,
+.sp_btn {
+  display: none;
+}
+
+.top,
+.thanks {
+  position: relative;
+}
+
+.day,
+.night {
+  display: block;
+}
+
+.moon {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+}
+
+@media screen and (max-width: 1100px) {
+  .pc_nav {
+    display: none;
+  }
+
+  .pc_nav ul li {
+    font-size: 1.7vw;
+  }
+}
+
+/* 本文 */
+
+.concept,
+.works,
+.about,
+.contact,
+.about_page {
+  text-align: center;
+  padding: 140px 0;
+}
+
+.concept,
+.about {
+  background-color: #f7f7f7;
+}
+
+.concept h2 {
+  padding-bottom: 40px;
+}
+
+.concept_text,
+.about_name,
+.about_text,
+.delicate_text,
+.flexibility_text {
+  font-size: 1.4vw;
+  line-height: 1.8;
+}
+
+.works h2,
+.about h2,
+.contact h2,
+.about_page h2 {
+  padding-bottom: 70px;
+}
+
+/* Works */
+
+.works_slider {
+  display: flex;
+}
+
+.works_slider img {
+  padding: 7%;
+  margin: 0 auto;
+}
+
+.btn_more {
+  text-align: right;
+}
+
+/* slick */
+
+.skick-dots li button:before,
+.slick-dots li.slick-active button:before {
+  color: #4c5b7f;
+}
+
+.slick-dots .slick-slider {
+  margin-bottom: 0;
+}
+
+.slick-next::before,
+.slick-next::after,
+.slick-prev::before,
+.slick-prev::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  vertical-align: middle;
+}
+
+.slick-next::after,
+.slick-prev::after {
+  width: 20px;
+  height: 20px;
+  border-top: 5px solid #4c5b7f;
+  border-right: 5px solid #4c5b7f;
+}
+
+/* next */
+
+.slick-next {
+  right: 10%;
+}
+
+.slick-next::after {
+  right: 10%;
+  transform: rotate(45deg);
+}
+
+/* prev */
+
+.slick-prev {
+  left: 10%;
+  z-index: 2;
+}
+
+.slick-prev::after {
+  left: 10%;
+  transform: rotate(-135deg);
+  z-index: 2;
+}
+
+/* About */
+
+.about_wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.about_me {
+  padding-left: 5%;
+  text-align: left;
+}
+
+.about_name {
+  border-bottom: 1px solid #4c5b7f;
+  padding: 3px 0 15px 0;
+}
+
+.about_text {
+  padding: 10px 0 50px 0;
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+}
+
+.design_skill,
+.coding_skill {
+  width: 30%;
+  padding: 3%;
+}
+
+.skill_title {
+  font-size: 1.5vw;
+  border-bottom: solid 1px #4c5b7f;
+  padding-bottom: 15px;
+}
+
+.skills p {
+  font-size: 1.4vw;
+  padding-top: 15px;
+}
+
+/* Contact */
+
+.contact_form {
+  display: block;
+  margin-bottom: 4vw;
+}
+
+input {
+  padding: 10px;
+  height: 40px;
+  width: 50%;
+  color: #fff;
+}
+
+textarea {
+  padding: 10px;
+  height: 300px;
+  color: #fff;
+  font-size: 17px;
+  width: 50%;
+  border: 1px solid #999;
+}
+
+button {
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #4c5b7f;
+  color: #f7f7f7;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  font-family: "stix-two-text", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+.copy {
+  text-align: center;
+  font-size: 13px;
+  padding: 50px;
+}
+
+.strawberrymoon {
+  max-width: 300px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+}
+
+.thanks_title {
+  color: #f7f7f7;
+  font-size: 3vw;
+  font-family: "stix-two-text", serif;
+  font-weight: 300;
+  font-style: normal;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  text-align: center;
+}
+
+.thanks_text {
+  color: #f7f7f7;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  text-align: center;
+}
+
+.about_page_wrap {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 145px;
+}
+
+.skills_page_wrap {
+  position: relative;
+}
+
+.flexibility,
+.delicate {
+  max-width: 300px;
+  text-align: left;
+}
+
+.skills_title {
+  display: block;
+}
+
+.flexibility {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+}
+
+.delicate {
+  position: absolute;
+  top: 75%;
+  left: 5%;
+}
